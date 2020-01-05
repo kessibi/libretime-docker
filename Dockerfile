@@ -1,0 +1,27 @@
+FROM ubuntu:16.04
+
+MAINTAINER "gui@odc.live"
+
+ENV HOSTNAME localhost
+ENV DEBIAN_FRONTEND noninteractive
+ENV XDG_RUNTIME_DIR 0
+
+LABEL __copyright__="(C) Guido Draheim, licensed under the EUPL" \
+        __version__="1.4.3325"
+
+RUN apt-get update && apt-get upgrade -y && \
+      apt-get install -y git rabbitmq-server apache2 curl python postgresql postgresql-contrib
+
+
+COPY systemctl.py /usr/bin/systemctl
+
+RUN test -L /bin/systemctl || ln -sf /usr/bin/systemctl /bin/systemctl
+
+COPY preparation.sh /preparation.sh
+RUN /preparation.sh
+
+VOLUME ["/etc/airtime", "/var/lib/postgresql", "/srv/airtime/stor", "/srv/airtime/watch"]
+
+EXPOSE 80 8000
+
+CMD ["/usr/bin/systemctl"]
