@@ -19,6 +19,7 @@ COPY systemctl.py /usr/bin/systemctl
 
 RUN test -L /bin/systemctl || ln -sf /usr/bin/systemctl /bin/systemctl
 
+COPY libre_start.sh /libre_start.sh
 COPY preparation.sh /preparation.sh
 RUN /preparation.sh
 
