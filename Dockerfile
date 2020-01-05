@@ -10,8 +10,10 @@ LABEL __copyright__="(C) Guido Draheim, licensed under the EUPL" \
         __version__="1.4.3325"
 
 RUN apt-get update && apt-get upgrade -y && \
-      apt-get install -y git rabbitmq-server apache2 curl python postgresql postgresql-contrib
+      apt-get install -y locales git rabbitmq-server apache2 curl python postgresql postgresql-contrib
 
+RUN locale-gen --purge en_US.UTF-8 && \
+      update-locale LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
 COPY systemctl.py /usr/bin/systemctl
 
