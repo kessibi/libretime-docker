@@ -23,7 +23,8 @@ https://github.com/gdraheim/docker-systemctl-images
 
 ### Using Docker Hub
 
-Work in progress ..
+The image is available from `docker pull odclive/libretime-docker`.
+You still need to go through steps 5 to 8.
 
 ### Building the image yourself
 
@@ -48,6 +49,6 @@ entry which is going to be down. You __have__ to bring it up using
 `pg_ctlcluster`. For example: `pg_ctlcluster 9.5 main start`.
 7. You can now continue the installation on your browser.
 8. libretime will ask you to perform some `sudo service` actions. Inside the
-container, instead of running `sudo service x start`, run `systemctl start x`
-for each of the service x.
+container, instead of running `sudo service x start`, run `./libre_start.sh`, it
+will restart every service.
 9. You are done with the installation, enjoy your new libretime radio.
