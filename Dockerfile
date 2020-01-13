@@ -43,7 +43,7 @@ RUN chmod +x /start.sh
 
 WORKDIR /
 
-VOLUME ["/etc/airtime", "/var/lib/postgresql", "/srv/airtime/stor", "/srv/airtime/watch"]
+VOLUME ["/etc/airtime", "/var/lib/postgresql/10/main", "/srv/airtime/stor", "/srv/airtime/watch"]
 
 EXPOSE 80 8000
 
