@@ -23,6 +23,8 @@ instructions for installation and when libretime will ask you to perform some
 `sudo service x start`, run `./libre_start.sh`, it
 will restart every service needed by libretime.
 
+__An example install is shown here:__ https://github.com/kessibi/libretime-docker/wiki/Sample-installation
+
 You are done with the installation, running `docker-compose down` and `up` again
 will simply pop you back to your installation (it may needed 15-30 seconds to
 restart). Enjoy your radio.
