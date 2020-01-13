@@ -32,7 +32,4 @@ cd / && rm -rf /src
 echo "** Creating config files"
 echo "localhost:5432:artime:airtime:airtime" > /root/.pgpass
 chmod 600 /root/.pgpass
-pg_ctlcluster 10 main restart
 
-mkdir -p /srv/airtime/stor
-chown -R www-data:www-data /srv/airtime/stor/

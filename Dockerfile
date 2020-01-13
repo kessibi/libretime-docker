@@ -31,9 +31,15 @@ COPY pkgs_list.apt /pkgs_list.apt
 
 RUN apt-get install --no-install-recommends -y $(cat /pkgs_list.apt)
 
-COPY libre_start.sh /libre_start.sh
-COPY preparation.sh /preparation.sh
+COPY scripts/libre_start.sh /libre_start.sh
+
+COPY scripts/preparation.sh /preparation.sh
+
 RUN /preparation.sh
+
+ADD scripts/start.sh /
+
+RUN chmod +x /start.sh
 
 WORKDIR /
 
@@ -41,4 +47,4 @@ VOLUME ["/etc/airtime", "/var/lib/postgresql", "/srv/airtime/stor", "/srv/airtim
 
 EXPOSE 80 8000
 
-CMD ["/usr/bin/systemctl"]
+CMD /start.sh && exec /usr/bin/systemctl
