@@ -31,8 +31,10 @@ The version of libretime used is [release 3.0.0-alpha.8](https://github.com/Libr
 
 ### Using Docker Hub
 
-The image is available from `docker pull odclive/libretime-docker`.
+The image is available from `docker pull odclive/libretime-docker:v0.1`.
 You still need to go through steps 5 to 8.
+
+Avoid using the tag `latest` as it was used for testing and is not stable.
 
 ### Building the image yourself
 
