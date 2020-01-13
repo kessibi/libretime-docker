@@ -5,10 +5,33 @@ One way to get libretime to work within a docker container.
 This project is only here to simplify the installation of libretime in a
 *single* docker container.
 
+## installation
+
+Simply run `docker pull odclive/libretime-docker:latest` to download the image.
+
+To run a standalone __none persisting__ container (for testing purposes) you can 
+use `docker run -p 80:80 -p 8000:8000 odclive/libretime-docker:latest` .
+
+To run a __persisting__ container, it is __strongly__ recommended you use a
+`docker-compose.yml` file coupled with a `.env` file (you can find an example
+for both of these in the project directory https://github.com/kessibi/libretime-docker).
+
+Once set up, run `docker-compose up`. Visiting http://localhost / your server ip
+/ the domain you're using will now render the basic libretime page. Follow the
+instructions for installation and when libretime will ask you to perform some
+`sudo service` actions. Inside the container, instead of running
+`sudo service x start`, run `./libre_start.sh`, it
+will restart every service needed by libretime.
+
+You are done with the installation, running `docker-compose down` and `up` again
+will simply pop you back to your installation (it may needed 15-30 seconds to
+restart). Enjoy your radio.
+
 ## disclaimer
 
 This installation is not secure, the logins and passwords provided are the
-default ones. This work is still in progress.
+default ones. It is recommended to change them (icecast, libretime, postgres,..).
+This work is still in progress.
 
 ## work of others
 
@@ -26,42 +49,6 @@ This Docker image is based on the `ubuntu:18.04` base image, runs with postgres
 yet).
 
 The version of libretime used is [release 3.0.0-alpha.8](https://github.com/LibreTime/libretime/releases/tag/3.0.0-alpha.8)
-
-## installation
-
-### Using Docker Hub
-
-The image is available from `docker pull odclive/libretime-docker:v0.1`.
-You still need to go through steps 5 to 8.
-
-Avoid using the tag `latest` as it was used for testing and is not stable.
-
-### Building the image yourself
-
-The first 4 steps will install libretime in a dedicated container.
-
-1. `git clone https://github.com/kessibi/libretime-docker.git`
-2. `cd libretime-docker`
-3. `docker build -t my_libretime_install:latest .` please note that the image
-will take some time to build as it needs to build a correct Ubuntu environment
-and clone libretime as well.
-4. `docker run -d -p 80:80 -p 8000:8000 my_libretime_install:latest`
-
-Visiting http://localhost / your server ip / the domain you're using will now
-render the basic libretime page. However, you won't be able to confirm the
-database entries as you will realize the screen is covered in red. Dont't worry,
-it is *normal* and easy to fix.
-
-5. `docker ps` will give you the id of your libretime container, copy it and run
-`docker exec -it <id> bash`, replacing `<id>` with the one you just got.
-6. inside the container, run `pg_lsclusters`. This should give you one postgres
-entry which is going to be down. You __have__ to bring it up using
-`pg_ctlcluster`. For example: `pg_ctlcluster 10 main start`.
-7. You can now continue the installation on your browser.
-8. libretime will ask you to perform some `sudo service` actions. Inside the
-container, instead of running `sudo service x start`, run `./libre_start.sh`, it
-will restart every service.
-9. You are done with the installation, enjoy your new libretime radio.
 
 ## having troubles with the image
 
