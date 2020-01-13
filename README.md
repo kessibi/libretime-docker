@@ -25,6 +25,7 @@ This Docker image is based on the `ubuntu:18.04` base image, runs with postgres
 10, php 7 and python 2.7 (libretime has not fully transitionned to python 3
 yet).
 
+The version of libretime used is [release 3.0.0-alpha.8](https://github.com/LibreTime/libretime/releases/tag/3.0.0-alpha.8)
 
 ## installation
 
