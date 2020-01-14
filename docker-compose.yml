@@ -23,4 +23,3 @@ services:
 
 volumes:
   libretime_postgres:
-  libretime_liquidsoap:
