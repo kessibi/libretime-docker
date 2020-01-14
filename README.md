@@ -10,7 +10,7 @@ This project is only here to simplify the installation of libretime in a
 Simply run `docker pull odclive/libretime-docker:latest` to download the image.
 
 To run a standalone __none persisting__ container (for testing purposes) you can 
-use `docker run -p 80:80 -p 8000:8000 odclive/libretime-docker:latest` .
+use `docker run -p 80:80 -p 8000:8000 -p 8001:8001 --name=libretime odclive/libretime-docker:latest`.
 
 To run a __persisting__ container, it is __strongly__ recommended you use a
 `docker-compose.yml` file coupled with a `.env` file (you can find an example
@@ -18,10 +18,10 @@ for both of these in the project directory https://github.com/kessibi/libretime-
 
 Once set up, run `docker-compose up`. Visiting http://localhost / your server ip
 / the domain you're using will now render the basic libretime page. Follow the
-instructions for installation and when libretime will ask you to perform some
-`sudo service` actions. Inside the container, instead of running
-`sudo service x start`, run `./libre_start.sh`, it
-will restart every service needed by libretime.
+instructions for installation. At some point, libretime will tell you to run
+`sudo service` commands, simply run:
+
+`docker exec libretime sh /libre_start.sh` and it's done.
 
 __An example install is shown here:__ https://github.com/kessibi/libretime-docker/wiki/Sample-installation
 
