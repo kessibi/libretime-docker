@@ -1,4 +1,4 @@
-# libretime-docker
+# libretime-docker ![Docker Pulls](https://img.shields.io/docker/pulls/odclive/libretime-docker) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odclive/libretime-docker)
 
 One way to get libretime to work within a docker container.
 
