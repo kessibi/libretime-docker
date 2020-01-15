@@ -18,3 +18,10 @@ echo "Restarting libretime services"
 /libre_start.sh
 
 echo "Starting libretime container..."
+
+### NECESSARY LIQUIDSOAP CHANGES
+chown root:www-data /usr/bin/systemctl
+chmod 770 /usr/bin/systemctl 
+chown root:www-data /var/run/airtime-liquidsoap.service.status /var/log/journal/airtime-liquidsoap.service.log
+chmod 770 /var/run/airtime-liquidsoap.service.status /var/log/journal/airtime-liquidsoap.service.log
+

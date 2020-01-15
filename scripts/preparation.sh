@@ -13,6 +13,8 @@ sed '/pid=1 following any symlinks/a \ \ \ \ has_systemd_init=true; verbose "Det
 mv mod_install install
 chmod u+x install
 
+sed -i "/subprocess.call('kill -9/a \ \ \ \ \ \ \ \ \ \ \ \ os.system('sh \/libre_start.sh')" python_apps/pypo/pypo/pypofetch.py > mod_fetch
+
 # NECESSARY PYTHON INSTALL
 pip install more-itertools
 
