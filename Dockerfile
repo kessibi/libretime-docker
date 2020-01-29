@@ -7,6 +7,15 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV XDG_RUNTIME_DIR 0
 ENV LIBRE_V 3.0.0-alpha.8
 
+## Set UTF-8 ENV for id3 tags and filenames
+RUN locale-gen "en_US.UTF-8" && \
+    echo -e "LC_ALL=en_US.UTF-8\nLANG=en_US.UTF-8" >> /etc/default/locale
+    
+ENV PYTHONIOENCODING UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
+
 COPY pkgs_list.apt /pkgs_list.apt
 
 RUN apt-get update && apt-get install --no-install-recommends -y apt-utils && \
