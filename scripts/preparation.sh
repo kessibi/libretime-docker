@@ -30,6 +30,10 @@ echo "** Installing libretime"
 /etc/init.d/rabbitmq-server stop
 cd / && rm -rf /src
 
+## APACHE RESTART
+a2enmod rewrite
+systemctl restart apache2
+
 ### POSTGRES POST CONFIG
 echo "** Creating config files"
 echo "localhost:5432:artime:airtime:airtime" > /root/.pgpass
