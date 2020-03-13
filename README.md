@@ -29,6 +29,12 @@ You are done with the installation, running `docker-compose down` and `up` again
 will simply pop you back to your installation (it may needed 15-30 seconds to
 restart). Enjoy your radio.
 
+## HTTPS
+
+It is possible to serve this image via HTTPS using different tools, one option
+is to use traefik and docker-compose as described in the wiki
+[page](https://github.com/kessibi/libretime-docker/wiki/Using-traefik-to-serve-libretime-over-HTTPS)
+
 ## disclaimer
 
 This installation is not secure, the logins and passwords provided are the
