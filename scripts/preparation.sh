@@ -24,6 +24,11 @@ echo "NODENAME=rabbitmq@localhost" > /etc/rabbitmq/rabbitmq-env.conf
 rabbitmq-plugins enable rabbitmq_management
 /etc/init.d/rabbitmq-server start
 
+### MUTAGEN TWEAK
+echo "** Mutagen tweaking **"
+cat python_apps/airtime_analyzer/setup.py | sed 's/mutagen~/mutagen/g' \
+  > python_apps/airtime_analyzer/setup.py
+
 ### LIBRETIME INSTALL
 echo "** Installing libretime"
 ./install -fiap
