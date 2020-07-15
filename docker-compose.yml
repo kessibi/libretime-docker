@@ -1,6 +1,9 @@
 version: "3.6"
 
-# make sure to have a .env file in the same directory
+# make sure to have a .env file in the same directory;
+#
+# to use volumes, make sure to uncomment the appropriate volumes sections lines
+# 15 to 21 and 28, 29.
 
 services:
   libretime:
@@ -10,16 +13,17 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TZ}
-    volumes:
-      - ${USERDIR}/docker/libretime/airtime:/etc/airtime
-      - ${USERDIR}/docker/libretime/stor:/srv/airtime/stor
-      - ${USERDIR}/docker/libretime/watch:/srv/airtime/watch
-      - libretime_postgres:/var/lib/postgresql/10/main
-      - ${USERDIR}/docker/libretime/liquidsoap:/usr/local/lib/python2.7/dist-packages/airtime_playout-1.0-py2.7.egg/liquidsoap/
+    # volumes:
+    #  - ${USERDIR}/docker/libretime/airtime:/etc/airtime
+    #  - ${USERDIR}/docker/libretime/stor:/srv/airtime/stor
+    #  - ${USERDIR}/docker/libretime/watch:/srv/airtime/watch
+    #  - libretime_postgres:/var/lib/postgresql/10/main
+    #  - ${USERDIR}/docker/libretime/liquidsoap:/usr/local/lib/python2.7/dist-packages/airtime_playout-1.0-py2.7.egg/liquidsoap/
     ports:
       - 80:80
       - 8000:8000
+      - 8001:8001
     restart: always
 
-volumes:
-  libretime_postgres:
+# volumes:
+#  libretime_postgres:
