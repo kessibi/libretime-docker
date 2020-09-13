@@ -26,8 +26,8 @@ rabbitmq-plugins enable rabbitmq_management
 
 ### MUTAGEN TWEAK
 echo "** Mutagen tweaking **"
-cat python_apps/airtime_analyzer/setup.py | sed 's/mutagen~/mutagen/g' \
-  > python_apps/airtime_analyzer/setup.py
+sed -i 's/mutagen>=1.41.1/mutagen==1.43/g' python_apps/airtime_analyzer/setup.py
+
 
 ### LIBRETIME INSTALL
 echo "** Installing libretime"
