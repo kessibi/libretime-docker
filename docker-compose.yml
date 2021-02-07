@@ -18,7 +18,7 @@ services:
     #  - ${USERDIR}/docker/libretime/airtime:/etc/airtime
     #  - ${USERDIR}/docker/libretime/stor:/srv/airtime/stor
     #  - ${USERDIR}/docker/libretime/watch:/srv/airtime/watch
-    #  - libretime_postgres:/var/lib/postgresql/10/main
+    #  - libretime_postgres:/var/lib/postgresql/11/main
     #  - ${USERDIR}/docker/libretime/liquidsoap:/usr/local/lib/python3.7/dist-packages/airtime_playout-1.0-py3.7.egg/liquidsoap/
     ports:
       - 80:80
