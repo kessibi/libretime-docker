@@ -1,10 +1,10 @@
 ### VERSION
-version="3.0.0-alpha.8"
+version="3.0.0-alpha.9"
 
 ### POSTGRES CONFIG
-echo "host    all             all             0.0.0.0/0 trust" >> /etc/postgresql/10/main/pg_hba.conf
-echo "listen_addresses='*'" >> /etc/postgresql/10/main/postgresql.conf
-pg_ctlcluster 10 main start
+echo "host    all             all             0.0.0.0/0 trust" >> /etc/postgresql/11/main/pg_hba.conf
+echo "listen_addresses='*'" >> /etc/postgresql/11/main/postgresql.conf
+pg_ctlcluster 11 main start
 
 # LIBRETIME TWEAKING
 cd "libretime-${version}"

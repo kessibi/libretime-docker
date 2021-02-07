@@ -1,4 +1,4 @@
-# libretime-docker ![Docker Pulls](https://img.shields.io/docker/pulls/odclive/libretime-docker) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odclive/libretime-docker)
+# libretime-docker (based on libretime 3.0.0-alpha9)![Docker Pulls](https://img.shields.io/docker/pulls/odclive/libretime-docker) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odclive/libretime-docker)
 
 One way to get libretime to work within a docker container.
 
@@ -56,7 +56,7 @@ This Docker image is based on the `ubuntu:18.04` base image, runs with postgres
 10, php 7 and python 2.7 (libretime has not fully transitionned to python 3
 yet).
 
-The version of libretime used is [release 3.0.0-alpha.8](https://github.com/LibreTime/libretime/releases/tag/3.0.0-alpha.8)
+The version of libretime used is [release 3.0.0-alpha.9](https://github.com/LibreTime/libretime/releases/tag/3.0.0-alpha.8)
 
 ## having troubles with the image
 
@@ -65,7 +65,8 @@ provide enough information to understand and recreate the problem.
 
 ## upgrade of the image
 
-If you downloaded the image early on, you might face these problems:
+If you downloaded the image early on (before version 3.0.0-alpha9, you might
+face these problems:
 
   - When updating the image, it is possible you had an image based on ubuntu 16
   (`cat /etc/os-release` in the Docker container),if it is the case you'll have
@@ -75,3 +76,4 @@ If you downloaded the image early on, you might face these problems:
   can't upload songs. To fix the issue, please run this command inside the
   container: `chown -R www-data:www-data /srv/airtime/stor`.
   Thanks to @miasmaejuices for pointing that out.
+

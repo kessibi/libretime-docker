@@ -1,4 +1,4 @@
-systemctl start airtime-playout
-systemctl start airtime-liquidsoap
-systemctl start airtime_analyzer
-systemctl start airtime-celery
+systemctl start libretime-playout
+systemctl start libretime-liquidsoap
+systemctl start libretime-analyzer
+systemctl start libretime-celery

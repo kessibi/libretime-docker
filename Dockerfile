@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM debian:buster
 
 MAINTAINER "gui@odc.live"
 
 ENV HOSTNAME localhost
 ENV DEBIAN_FRONTEND noninteractive
 ENV XDG_RUNTIME_DIR 0
-ENV LIBRE_V 3.0.0-alpha.8
+ENV LIBRE_V 3.0.0-alpha.9
 
 COPY pkgs_list.apt /pkgs_list.apt
 
@@ -39,13 +39,14 @@ RUN /preparation.sh
 
 ADD scripts/start.sh /
 
+# useful for passing liquidsoap configs down the line
 RUN mkdir /liquidsoap && \
-      cp /usr/local/lib/python2.7/dist-packages/airtime_playout-1.0-py2.7.egg/liquidsoap/* /liquidsoap
+      cp -r /usr/local/lib/python3.7/dist-packages/airtime_playout-1.0-py3.7.egg/liquidsoap/* /liquidsoap
 
 WORKDIR /
 
 VOLUME ["/etc/airtime", "/var/lib/postgresql/10/main", "/srv/airtime/stor", \
-  "/srv/airtime/watch", "/usr/local/lib/python2.7/dist-packages/airtime_playout-1.0-py2.7.egg/liquidsoap/"]
+  "/srv/airtime/watch", "/usr/local/lib/python3.7/dist-packages/airtime_playout-1.0-py3.7.egg/liquidsoap/"]
 
 EXPOSE 80 8000
 

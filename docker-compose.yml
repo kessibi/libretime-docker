@@ -7,7 +7,8 @@ version: "3.6"
 
 services:
   libretime:
-    image: odclive/libretime-docker:latest
+    #image: odclive/libretime-docker:latest
+    image: libretime:latest
     container_name: libretime
     environment:
       - PUID=1000
@@ -18,7 +19,7 @@ services:
     #  - ${USERDIR}/docker/libretime/stor:/srv/airtime/stor
     #  - ${USERDIR}/docker/libretime/watch:/srv/airtime/watch
     #  - libretime_postgres:/var/lib/postgresql/10/main
-    #  - ${USERDIR}/docker/libretime/liquidsoap:/usr/local/lib/python2.7/dist-packages/airtime_playout-1.0-py2.7.egg/liquidsoap/
+    #  - ${USERDIR}/docker/libretime/liquidsoap:/usr/local/lib/python3.7/dist-packages/airtime_playout-1.0-py3.7.egg/liquidsoap/
     ports:
       - 80:80
       - 8000:8000
