@@ -7,8 +7,7 @@ version: "3.6"
 
 services:
   libretime:
-    #image: odclive/libretime-docker:latest
-    image: libretime:latest
+    image: odclive/libretime-docker:latest
     container_name: libretime
     environment:
       - PUID=1000

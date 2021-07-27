@@ -63,6 +63,13 @@ The version of libretime used is [release 3.0.0-alpha.9](https://github.com/Libr
 Feel free to create an issue with your __detailed__ problem, make sure to
 provide enough information to understand and recreate the problem.
 
+## updating stream configurations
+
+Feel free to modify stream configs, just know you will have to run `docker exec
+libretime sh /libre_start.sh` afterwards to restart all services. Otherwise,
+liquidsoap just doesn't start up again. If you find a clever way to tackle this
+issue, don't hesitate to bring it forward.
+
 ## upgrade of the image
 
 If you downloaded the image early on (before version 3.0.0-alpha9, you might
