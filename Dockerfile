@@ -5,7 +5,7 @@ MAINTAINER "gui@odc.live"
 ENV HOSTNAME localhost
 ENV DEBIAN_FRONTEND noninteractive
 ENV XDG_RUNTIME_DIR 0
-ENV LIBRE_V 3.0.0-alpha.9
+ENV LIBRE_V 3.0.0-alpha.10
 
 COPY pkgs_list.apt /pkgs_list.apt
 
@@ -41,7 +41,7 @@ ADD scripts/start.sh /
 
 # useful for passing liquidsoap configs down the line
 RUN mkdir /liquidsoap && \
-      cp -r /usr/local/lib/python3.7/dist-packages/airtime_playout-1.0-py3.7.egg/liquidsoap/* /liquidsoap
+      cp -r /usr/local/lib/python3.7/dist-packages/liquidsoap/* /liquidsoap
 
 WORKDIR /
 
