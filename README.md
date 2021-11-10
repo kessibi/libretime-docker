@@ -1,4 +1,4 @@
-# libretime-docker (based on libretime 3.0.0-alpha.10)![Docker Pulls](https://img.shields.io/docker/pulls/odclive/libretime-docker) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odclive/libretime-docker)
+# libretime-docker (based on libretime 3.0.0-alpha9)![Docker Pulls](https://img.shields.io/docker/pulls/odclive/libretime-docker) ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/odclive/libretime-docker)
 
 One way to get libretime to work within a docker container.
 
@@ -56,7 +56,7 @@ This Docker image is based on the `ubuntu:18.04` base image, runs with postgres
 10, php 7 and python 2.7 (libretime has not fully transitionned to python 3
 yet).
 
-The version of libretime used is [release 3.0.0-alpha.10](https://github.com/LibreTime/libretime/releases/tag/3.0.0-alpha.10)
+The version of libretime used is [release 3.0.0-alpha9](https://github.com/LibreTime/libretime/releases/tag/3.0.0-alpha.9)
 
 ## having troubles with the image
 

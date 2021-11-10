@@ -1,5 +1,5 @@
 ### VERSION
-version="3.0.0-alpha.10"
+version="3.0.0-alpha.9"
 
 ### POSTGRES CONFIG
 echo "host    all             all             0.0.0.0/0 trust" >> /etc/postgresql/11/main/pg_hba.conf

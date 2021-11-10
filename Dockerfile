@@ -5,7 +5,7 @@ MAINTAINER "gui@odc.live"
 ENV HOSTNAME localhost
 ENV DEBIAN_FRONTEND noninteractive
 ENV XDG_RUNTIME_DIR 0
-ENV LIBRE_V 3.0.0-alpha.10
+ENV LIBRE_V 3.0.0-alpha.9
 
 COPY pkgs_list.apt /pkgs_list.apt
 
